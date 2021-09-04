@@ -1,0 +1,6 @@
+pre : ’, a’, 1
+or : OR
+var : version, database(), user(), ’,1
+symbol : !=, =, LIKE
+suffix : 1, a, %27, ’, ’%a%’
+post : --, #’, #
