@@ -11,3 +11,20 @@ if [html] = "<img>" then [htmlend] = "</img>";
 if [html] = "<link>" then [htmlend] = "</link>";
 if [html] = "<src>" then [htmlend] = "</src>";
 if [html] = "<object>" then [htmlend] = "</object>";
+
+
+
+
+html : <script>, <img, <link, <object, <html, <body
+event : onload, onclick, onmouseover, onmousemove
+equals : =
+value : alert("XSS")>, alert(0)>, "alert(document.cookie)">, "background-image: url(&#1;javascript:alert('XSS'))">, alert(document.cookie)>, JaVaScRiPt:alert('XSS')>, "javascript:alert(XSS)">, java\0script:alert(\"XSS\")>";'>
+htmlend : </script>, </link>, </img>, </object>, </html>, </body>
+
+
+if [html] = "<script>" then [htmlend] = "</script>";
+if [html] = "<img" then [htmlend] = "</img>";
+if [html] = "<link" then [htmlend] = "</link>";
+if [html] = "<object" then [htmlend] = "</object>";
+if [html] = "<html" then [htmlend] = "</html>";
+if [html] = "<body" then [htmlend] = "</body>";
