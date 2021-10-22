@@ -1,30 +1,18 @@
-pre : ', !, \, -, >, ;, "
-html : <script>, <img>, <link>, <src>, <object>
-event : onload, onmousemove, onclick, onmouseover, NULL
-equals : =, NULL
-value : alert(XSS), alert(0), "alert(document.cookie)", "background-image: url(&#1;javascript:alert('XSS'))", alert(document.cookie), "http://xss.rocks/xss.js", JaVaScRiPt:alert('XSS'), "javascript:alert(XSS)", java\0script:alert(\"XSS\")>";'
-htmlend : </src>, </script>, </link>, </img>, </object>
-
-
-if [html] = "<script>" then [htmlend] = "</script>";
-if [html] = "<img>" then [htmlend] = "</img>";
-if [html] = "<link>" then [htmlend] = "</link>";
-if [html] = "<src>" then [htmlend] = "</src>";
-if [html] = "<object>" then [htmlend] = "</object>";
-
-
-
-
-html : <script>, <img, <link, <object, <html, <body
-event : onload, onclick, onmouseover, onmousemove
+html : <script>, <img, <audio, <video, <object, <body
+src : src=1, NULL
+href : href=1, NULL
+event : onload, onclick, onmouseover, onmousemove, onerror
 equals : =
-value : alert("XSS")>, alert(0)>, "alert(document.cookie)">, "background-image: url(&#1;javascript:alert('XSS'))">, alert(document.cookie)>, JaVaScRiPt:alert('XSS')>, "javascript:alert(XSS)">, java\0script:alert(\"XSS\")>";'>
-htmlend : </script>, </link>, </img>, </object>, </html>, </body>
+value : alert("XSS"), alert(0), "alert(document.cookie)", alert(document.cookie), JaVaScRiPt:alert('XSS'), "javascript:alert('XSS')"
+htmlend : </script>, ></img>, ></audio>, ></video>, ></object>, ></body>
 
 
 if [html] = "<script>" then [htmlend] = "</script>";
-if [html] = "<img" then [htmlend] = "</img>";
-if [html] = "<link" then [htmlend] = "</link>";
-if [html] = "<object" then [htmlend] = "</object>";
-if [html] = "<html" then [htmlend] = "</html>";
-if [html] = "<body" then [htmlend] = "</body>";
+if [html] = "<img" then [htmlend] = "></img>";
+if [html] = "<audio" then [htmlend] = "></audio>";
+if [html] = "<video" then [htmlend] = "></video>";
+if [html] = "<object" then [htmlend] = "></object>";
+if [html] = "<body" then [htmlend] = "></body>";
+if [html] = "<script>" then [src] = "NULL";
+if [html] = "<script>" then [href] = "NULL";
+if [src] = "src=1" then [href] = "href=1";
