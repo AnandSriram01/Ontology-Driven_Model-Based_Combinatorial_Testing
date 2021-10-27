@@ -1,6 +1,6 @@
-pre : ’, a’, 1
-or : OR
-var : version, database(), user(), ’,1
-symbol : !=, =, LIKE
-suffix : 1, a, %27, ’, ’%a%’
-post : --, #’, #
+pre : a', 1
+logical_op : OR, Or, oR, or, ||, AND, ANd, AnD, aND, anD, And, aNd, and, &&
+func : version, benchmark(), user(), convert(), cast()
+comp_op : !=, ==, LIKE, like, lIKE, LiKE, LIkE, LIKe, Like, lIke, liKe, likE, LIke, LiKe, LikE, lIKe, lIkE, liKE
+suffix : 1, a, %27, '%a%', %22
+post : --, #, #, /*, %00, %23, %2F, %2A, %2F%2A
