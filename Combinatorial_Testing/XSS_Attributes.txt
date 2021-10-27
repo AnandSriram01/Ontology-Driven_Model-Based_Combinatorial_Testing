@@ -1,18 +1,18 @@
-html : <script>, <img, <audio, <video, <object, <body
+html_open : <script>, <img, <audio, <video, <object, <body
 src : src=1, NULL
 href : href=1, NULL
 event : onload, onclick, onmouseover, onmousemove, onerror
-equals : =
-value : alert("XSS"), alert(0), "alert(document.cookie)", alert(document.cookie), JaVaScRiPt:alert('XSS'), "javascript:alert('XSS')"
-htmlend : </script>, ></img>, ></audio>, ></video>, ></object>, ></body>
+equal : =
+payload : alert("XSS"), alert(0), "alert(document.cookie)", alert(document.cookie), JaVaScRiPt:alert('XSS'), "javascript:alert('XSS')"
+html_close : </script>, ></img>, ></audio>, ></video>, ></object>, ></body>
 
-
-if [html] = "<script>" then [htmlend] = "</script>";
-if [html] = "<img" then [htmlend] = "></img>";
-if [html] = "<audio" then [htmlend] = "></audio>";
-if [html] = "<video" then [htmlend] = "></video>";
-if [html] = "<object" then [htmlend] = "></object>";
-if [html] = "<body" then [htmlend] = "></body>";
-if [html] = "<script>" then [src] = "NULL";
-if [html] = "<script>" then [href] = "NULL";
+if [html_open] = "<script>" then [html_close] = "</script>";
+if [html_open] = "<img" then [html_close] = "></img>";
+if [html_open] = "<audio" then [html_close] = "></audio>";
+if [html_open] = "<video" then [html_close] = "></video>";
+if [html_open] = "<object" then [html_close] = "></object>";
+if [html_open] = "<body" then [html_close] = "></body>";
+if [html_open] = "<script>" then [src] = "NULL";
+if [html_open] = "<script>" then [href] = "NULL";
 if [src] = "src=1" then [href] = "href=1";
+if [src] = "NULL" then [href] = "NULL";
